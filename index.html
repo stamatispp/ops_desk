@@ -28,7 +28,6 @@ tailwind.config = {
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: #242D3B; border-radius: 3px; }
-
   .ambient-orb {
     position: fixed; border-radius: 50%; filter: blur(120px); opacity: 0.08; pointer-events: none; z-index: 0;
     animation: orbFloat 25s ease-in-out infinite alternate;
@@ -40,7 +39,6 @@ tailwind.config = {
     50% { transform: translate(20px, -30px) scale(1.06); }
     100% { transform: translate(0, 0) scale(1); }
   }
-
   .grid-bg {
     position: fixed; inset: 0; z-index: 0; pointer-events: none;
     background-image: linear-gradient(rgba(36,45,59,0.2) 1px, transparent 1px),
@@ -48,8 +46,6 @@ tailwind.config = {
     background-size: 50px 50px;
     mask-image: radial-gradient(ellipse at center, black 15%, transparent 65%);
   }
-
-  /* Mobile tab nav */
   .mobile-nav {
     display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
     background: rgba(18,22,28,0.92); backdrop-filter: blur(16px);
@@ -68,8 +64,6 @@ tailwind.config = {
   .mob-tab.active { color: #E8A838; }
   .mob-tab.active i { color: #E8A838; }
   .mob-tab:not(.active):active { background: rgba(36,45,59,0.4); }
-
-  /* Widget */
   .widget {
     background: #181E28; border: 1px solid #242D3B; border-radius: 14px;
     transition: border-color 0.3s;
@@ -83,8 +77,6 @@ tailwind.config = {
     font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #6B7A90;
   }
   .widget-body { padding: 12px 16px 16px; }
-
-  /* Task items */
   .task-item {
     display: flex; align-items: flex-start; gap: 9px; padding: 8px 8px; border-radius: 8px;
     transition: background 0.15s; cursor: default;
@@ -109,15 +101,12 @@ tailwind.config = {
   .priority-high { background: #F87171; box-shadow: 0 0 5px rgba(248,113,113,0.35); }
   .priority-medium { background: #FBBF24; }
   .priority-low { background: #34D399; }
-
   .cat-tab {
     padding: 4px 10px; border-radius: 6px; font-size: 10px; font-weight: 500;
     cursor: pointer; transition: all 0.2s; color: #6B7A90; border: 1px solid transparent;
     white-space: nowrap; -webkit-tap-highlight-color: transparent;
   }
   .cat-tab.active { color: #E8A838; background: rgba(232,168,56,0.08); border-color: rgba(232,168,56,0.2); }
-
-  /* Calendar */
   .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
   .cal-day-header {
     text-align: center; font-size: 9px; font-weight: 600; color: #3E4A5C;
@@ -139,7 +128,6 @@ tailwind.config = {
   .cal-dot { width: 3px; height: 3px; border-radius: 50%; }
   .cal-dot.pending { background: #FBBF24; }
   .cal-dot.completed { background: #34D399; }
-
   .day-panel {
     background: #131820; border: 1px solid #1E2530; border-radius: 9px;
     padding: 10px 12px; max-height: 200px; overflow-y: auto;
@@ -150,8 +138,6 @@ tailwind.config = {
   }
   .day-task-dot { width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
   .day-task-done { text-decoration: line-through; color: #3E4A5C; }
-
-  /* Notes */
   .note-card {
     padding: 11px 13px; border-radius: 9px; border: 1px solid #242D3B;
     background: rgba(19,24,32,0.5); transition: all 0.2s; cursor: pointer;
@@ -166,20 +152,13 @@ tailwind.config = {
   .note-card.note-personal::before { background: #60A5FA; }
   .note-card.note-ideas::before { background: #A78BFA; }
   .note-card.note-urgent::before { background: #F87171; }
-
-  /* ===== QUICK LINKS / LAUNCHPAD ===== */
-  .launchpad-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-  }
+  .launchpad-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
   .link-tile {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     gap: 6px; padding: 10px 6px; border-radius: 10px;
     border: 1px solid #242D3B; background: rgba(19,24,32,0.6);
     cursor: pointer; transition: all 0.18s; text-decoration: none;
-    position: relative; overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
+    position: relative; overflow: hidden; -webkit-tap-highlight-color: transparent;
   }
   .link-tile::before {
     content: ''; position: absolute; inset: 0; opacity: 0;
@@ -196,12 +175,9 @@ tailwind.config = {
   .link-tile .link-label {
     font-size: 9px; font-weight: 500; color: #8B95A5;
     text-align: center; white-space: nowrap; overflow: hidden;
-    text-overflow: ellipsis; width: 100%; letter-spacing: 0.02em;
-    transition: color 0.18s;
+    text-overflow: ellipsis; width: 100%; letter-spacing: 0.02em; transition: color 0.18s;
   }
   .link-tile:hover .link-label { color: #E8ECF1; }
-
-  /* Delete button on link tile */
   .link-tile .tile-del {
     position: absolute; top: 3px; right: 3px; width: 14px; height: 14px;
     border-radius: 4px; background: rgba(248,113,113,0.0); color: #3E4A5C;
@@ -210,32 +186,23 @@ tailwind.config = {
   }
   .link-tile:hover .tile-del { opacity: 1; }
   .link-tile .tile-del:hover { background: rgba(248,113,113,0.15); color: #F87171; }
-
-  /* Add tile */
   .link-tile-add {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     gap: 5px; padding: 10px 6px; border-radius: 10px;
     border: 1px dashed #242D3B; background: transparent;
-    cursor: pointer; transition: all 0.18s; color: #3E4A5C;
-    -webkit-tap-highlight-color: transparent;
+    cursor: pointer; transition: all 0.18s; color: #3E4A5C; -webkit-tap-highlight-color: transparent;
   }
   .link-tile-add:hover { border-color: #E8A838; color: #E8A838; background: rgba(232,168,56,0.04); }
   .link-tile-add:active { transform: scale(0.94); }
   .link-tile-add i { font-size: 14px; }
   .link-tile-add span { font-size: 8px; font-weight: 500; letter-spacing: 0.04em; }
-
-  /* Link group label */
   .link-group-label {
     font-size: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em;
     color: #3E4A5C; margin-bottom: 5px; margin-top: 2px;
     display: flex; align-items: center; gap: 4px;
   }
   .link-group-label::after { content: ''; flex: 1; height: 1px; background: #1E2530; }
-
-  /* Favicon img in tile */
   .tile-favicon { width: 18px; height: 18px; border-radius: 4px; object-fit: contain; }
-
-  /* Inputs */
   .capture-input {
     background: #131820; border: 1px solid #242D3B; border-radius: 10px;
     padding: 10px 12px; color: #E8ECF1; font-family: 'Space Grotesk', sans-serif;
@@ -243,7 +210,6 @@ tailwind.config = {
   }
   .capture-input:focus { border-color: #E8A838; box-shadow: 0 0 0 3px rgba(232,168,56,0.08); }
   .capture-input::placeholder { color: #3E4A5C; }
-
   .btn-accent {
     background: linear-gradient(135deg, #E8A838, #D49530); color: #0C0F14; font-weight: 600;
     padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;
@@ -259,17 +225,14 @@ tailwind.config = {
     -webkit-tap-highlight-color: transparent;
   }
   .btn-ghost:active { background: rgba(36,45,59,0.3); }
-
   .stat-card {
     background: linear-gradient(135deg, rgba(24,30,40,0.7), rgba(19,24,32,0.8));
     border: 1px solid #242D3B; border-radius: 9px; padding: 10px;
   }
   .stat-value { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 600; }
   .stat-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: #6B7A90; margin-top: 1px; }
-
   .focus-bar-track { height: 4px; background: #1E2530; border-radius: 2px; overflow: hidden; }
   .focus-bar-fill { height: 100%; border-radius: 2px; transition: width 0.8s ease; background: linear-gradient(90deg, #E8A838, #F0C060); }
-
   .pending-banner {
     display: flex; align-items: center; gap: 8px; padding: 8px 10px;
     border-radius: 8px; border: 1px solid rgba(251,191,36,0.15);
@@ -279,8 +242,6 @@ tailwind.config = {
     width: 28px; height: 28px; border-radius: 7px; display: flex; align-items: center; justify-content: center;
     background: rgba(251,191,36,0.1); color: #FBBF24; font-size: 11px; flex-shrink: 0;
   }
-
-  /* Toast */
   .toast-container { position: fixed; top: 12px; right: 12px; left: 12px; z-index: 9999; display: flex; flex-direction: column; gap: 6px; }
   .toast {
     padding: 10px 14px; border-radius: 9px; font-size: 12px; font-weight: 500;
@@ -292,8 +253,6 @@ tailwind.config = {
   .toast-danger { background: rgba(248,113,113,0.12); color: #F87171; border-color: rgba(248,113,113,0.25); }
   @keyframes toastIn { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   @keyframes toastOut { to { opacity: 0; transform: translateY(-8px); } }
-
-  /* Modal */
   .modal-overlay {
     position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
     z-index: 1000; display: flex; align-items: flex-end; justify-content: center;
@@ -311,7 +270,6 @@ tailwind.config = {
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   @keyframes modalSlide { from { transform: translateY(100%); } to { transform: translateY(0); } }
   @keyframes modalPop { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-
   .form-select, .form-input, .form-textarea {
     background: #131820; border: 1px solid #242D3B; border-radius: 8px;
     padding: 10px 12px; color: #E8ECF1; font-family: 'Space Grotesk', sans-serif;
@@ -319,33 +277,23 @@ tailwind.config = {
   }
   .form-select:focus, .form-input:focus, .form-textarea:focus { border-color: #E8A838; }
   .form-select option { background: #181E28; }
-
   .streak-badge {
     display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px;
     background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.15);
     border-radius: 14px; font-size: 10px; color: #F87171; font-weight: 600;
   }
-
   .widget { animation: widgetIn 0.4s ease backwards; }
   @keyframes widgetIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-
-  /* Mobile: show bottom nav, hide desktop header clock on small */
   @media (max-width: 639px) {
     .mobile-nav { display: block; }
     .desk-clock { display: none; }
     .mobile-content { padding-bottom: 72px; }
   }
-  @media (min-width: 640px) {
-    .mobile-content { padding-bottom: 0; }
-  }
-
-  /* Tablet: tasks full width top, then 2-col below */
+  @media (min-width: 640px) { .mobile-content { padding-bottom: 0; } }
   @media (min-width: 640px) and (max-width: 1023px) {
     .dash-grid { grid-template-columns: 1fr 1fr !important; }
     #panel-tasks { grid-column: span 2; }
   }
-  /* Desktop: Tasks wide left (spans 2 rows) | Calendar top-right
-                                               | bottom row: Notes + Links */
   @media (min-width: 1024px) {
     .dash-grid {
       grid-template-columns: 1.2fr 1fr 1fr !important;
@@ -356,18 +304,14 @@ tailwind.config = {
     #panel-calendar { grid-column: 2 / 4; grid-row: 1; }
     #panel-links    { grid-column: 2 / 4; grid-row: 2; }
   }
-  /* Mobile: single column, only show active panel */
   @media (max-width: 639px) {
     .dash-grid { grid-template-columns: 1fr !important; }
     .dash-grid .widget { display: none; }
     .dash-grid .widget.mob-active { display: block; animation: widgetIn 0.3s ease; }
   }
-
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
-
-  /* ===== SYNC STATUS ===== */
   .sync-badge {
     display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px;
     border-radius: 14px; font-size: 10px; font-weight: 500; cursor: pointer;
@@ -384,21 +328,28 @@ tailwind.config = {
   .sync-dot.error   { background: #F87171; }
   @keyframes syncPulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
   .sync-label { color: #6B7A90; font-size: 9px; }
-
-  /* Settings modal wider */
   .modal-box-wide { max-width: 520px; }
+  /* Task action buttons */
+  .task-actions {
+    display: flex; align-items: center; gap: 1px; flex-shrink: 0;
+  }
+  .task-action-btn {
+    background: transparent; border: none; cursor: pointer; padding: 4px 5px;
+    border-radius: 5px; transition: all 0.15s; color: #3E4A5C; font-size: 10px;
+    display: flex; align-items: center; justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .task-action-btn:hover { background: rgba(36,45,59,0.5); color: #6B7A90; }
+  .task-action-btn.edit-btn:hover { color: #60A5FA; }
+  .task-action-btn.del-btn:hover { color: #F87171; }
 </style>
 </head>
 <body>
-
 <div class="ambient-orb orb-1"></div>
 <div class="ambient-orb orb-2"></div>
 <div class="grid-bg"></div>
 <div class="toast-container" id="toastContainer"></div>
-
 <div class="relative z-10 min-h-screen p-3 sm:p-4 md:p-6 lg:p-8 max-w-[1400px] mx-auto mobile-content">
-
-  <!-- Header -->
   <header class="flex items-center justify-between mb-4 sm:mb-5">
     <div>
       <div class="flex items-center gap-2.5 mb-0.5">
@@ -427,8 +378,6 @@ tailwind.config = {
       </button>
     </div>
   </header>
-
-  <!-- Quick Capture -->
   <div class="mb-4 sm:mb-5 flex gap-2.5">
     <div class="relative flex-1">
       <i class="fas fa-bolt absolute left-3.5 top-1/2 -translate-y-1/2 text-muted text-xs"></i>
@@ -438,11 +387,7 @@ tailwind.config = {
       <i class="fas fa-plus sm:mr-1.5"></i><span class="hidden sm:inline">Add Task</span>
     </button>
   </div>
-
-  <!-- Dashboard Grid -->
   <div class="dash-grid grid gap-3 sm:gap-4" style="grid-template-columns: 1fr;">
-
-    <!-- Panel 1: All Tasks -->
     <div class="widget mob-active" id="panel-tasks">
       <div class="widget-header">
         <h2><i class="fas fa-list-check mr-1.5 text-accent"></i>All Tasks</h2>
@@ -459,8 +404,6 @@ tailwind.config = {
       <div class="px-4 pt-1.5 pb-0.5 flex gap-1 flex-wrap" id="categoryTabs"></div>
       <div class="widget-body pt-1" style="max-height: calc(100vh - 280px); overflow-y: auto;" id="taskList"></div>
     </div>
-
-    <!-- Panel 2: Calendar + Today -->
     <div class="widget" id="panel-calendar">
       <div class="widget-header">
         <h2><i class="fas fa-calendar-days mr-1.5 text-accent"></i>Calendar</h2>
@@ -475,8 +418,6 @@ tailwind.config = {
         <div class="cal-grid" id="calDays"></div>
         <div id="dayDetail" style="display:none;" class="mt-2.5 day-panel"></div>
       </div>
-
-      <!-- Today Stats -->
       <div style="border-top: 1px solid #1E2530;">
         <div class="px-4 pt-3 pb-1 flex items-center justify-between">
           <h2 class="text-[11px] font-semibold uppercase tracking-widest text-muted"><i class="fas fa-chart-simple mr-1.5 text-accent"></i>Today</h2>
@@ -513,8 +454,6 @@ tailwind.config = {
         </div>
       </div>
     </div>
-
-    <!-- Panel 3: Notes -->
     <div class="widget" id="panel-notes">
       <div class="widget-header">
         <h2><i class="fas fa-sticky-note mr-1.5 text-accent"></i>Notes</h2>
@@ -524,8 +463,6 @@ tailwind.config = {
       </div>
       <div class="widget-body" style="max-height: calc(100vh - 220px); overflow-y: auto;" id="notesList"></div>
     </div>
-
-    <!-- Panel 4: Quick Links / Launchpad -->
     <div class="widget" id="panel-links">
       <div class="widget-header">
         <h2><i class="fas fa-rocket mr-1.5 text-accent"></i>Launchpad</h2>
@@ -535,33 +472,21 @@ tailwind.config = {
       </div>
       <div class="widget-body" id="launchpadBody"></div>
     </div>
-
   </div>
 </div>
-
-<!-- Mobile Bottom Nav -->
 <nav class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-inner">
-    <div class="mob-tab active" data-panel="tasks" onclick="switchMobileTab('tasks')">
-      <i class="fas fa-list-check"></i><span>Tasks</span>
-    </div>
-    <div class="mob-tab" data-panel="calendar" onclick="switchMobileTab('calendar')">
-      <i class="fas fa-calendar-days"></i><span>Calendar</span>
-    </div>
-    <div class="mob-tab" data-panel="notes" onclick="switchMobileTab('notes')">
-      <i class="fas fa-sticky-note"></i><span>Notes</span>
-    </div>
-    <div class="mob-tab" data-panel="links" onclick="switchMobileTab('links')">
-      <i class="fas fa-rocket"></i><span>Links</span>
-    </div>
+    <div class="mob-tab active" data-panel="tasks" onclick="switchMobileTab('tasks')"><i class="fas fa-list-check"></i><span>Tasks</span></div>
+    <div class="mob-tab" data-panel="calendar" onclick="switchMobileTab('calendar')"><i class="fas fa-calendar-days"></i><span>Calendar</span></div>
+    <div class="mob-tab" data-panel="notes" onclick="switchMobileTab('notes')"><i class="fas fa-sticky-note"></i><span>Notes</span></div>
+    <div class="mob-tab" data-panel="links" onclick="switchMobileTab('links')"><i class="fas fa-rocket"></i><span>Links</span></div>
   </div>
 </nav>
-
-<!-- Add Task Modal -->
+<!-- Add/Edit Task Modal -->
 <div class="modal-overlay" id="addTaskModal" style="display:none;" onclick="if(event.target===this)closeAddTaskModal()">
   <div class="modal-box">
     <div class="flex items-center justify-between mb-4">
-      <h3 class="font-semibold text-base">New Task</h3>
+      <h3 class="font-semibold text-base" id="taskModalTitle">New Task</h3>
       <button class="text-muted hover:text-fg transition p-1" onclick="closeAddTaskModal()"><i class="fas fa-xmark text-lg"></i></button>
     </div>
     <div class="space-y-3">
@@ -592,11 +517,10 @@ tailwind.config = {
           <input type="date" class="form-input" id="newTaskDate">
         </div>
       </div>
-      <button class="btn-accent w-full py-3" onclick="addTask()">Add Task</button>
+      <button class="btn-accent w-full py-3" id="taskModalBtn" onclick="saveTask()">Add Task</button>
     </div>
   </div>
 </div>
-
 <!-- Note Modal -->
 <div class="modal-overlay" id="noteModal" style="display:none;" onclick="if(event.target===this)closeNoteModal()">
   <div class="modal-box">
@@ -626,7 +550,6 @@ tailwind.config = {
     </div>
   </div>
 </div>
-
 <!-- Add Link Modal -->
 <div class="modal-overlay" id="linkModal" style="display:none;" onclick="if(event.target===this)closeLinkModal()">
   <div class="modal-box">
@@ -660,7 +583,6 @@ tailwind.config = {
           <p class="text-[8px] text-muted mt-1">Leave blank to auto-detect</p>
         </div>
       </div>
-      <!-- Color picker -->
       <div>
         <label class="text-[10px] text-muted uppercase tracking-wider mb-2 block">Accent Color</label>
         <div class="flex gap-2 flex-wrap" id="linkColorPicker">
@@ -678,14 +600,12 @@ tailwind.config = {
     </div>
   </div>
 </div>
-
 <!-- Loading Overlay -->
 <div id="loadingOverlay" style="position:fixed;inset:0;background:#0C0F14;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:opacity 0.3s ease;">
   <div style="width:36px;height:36px;border:3px solid #242D3B;border-top-color:#E8A838;border-radius:50%;animation:spin 0.8s linear infinite;"></div>
   <div style="font-family:'Space Grotesk',sans-serif;color:#6B7A90;font-size:13px;">Syncing your desk…</div>
 </div>
 <style>@keyframes spin{100%{transform:rotate(360deg);}}</style>
-
 <!-- Settings Modal -->
 <div class="modal-overlay" id="settingsModal" style="display:none;" onclick="if(event.target===this)closeSettingsModal()">
   <div class="modal-box modal-box-wide">
@@ -695,12 +615,10 @@ tailwind.config = {
       </h3>
       <button class="text-muted hover:text-fg transition p-1" onclick="closeSettingsModal()"><i class="fas fa-xmark text-lg"></i></button>
     </div>
-
     <p class="text-[10px] text-muted mb-4 leading-relaxed">
       Paste your <a href="https://jsonbin.io" target="_blank" class="text-accent hover:underline">JSONBin.io</a>
       Master Key and Bin ID below. The app will sync automatically on every change.
     </p>
-
     <div class="space-y-3">
       <div>
         <label class="text-[10px] text-muted uppercase tracking-wider mb-1 block">Master Key <span class="normal-case opacity-60">(X-Master-Key)</span></label>
@@ -715,7 +633,6 @@ tailwind.config = {
         <label class="text-[10px] text-muted uppercase tracking-wider mb-1 block">Bin ID</label>
         <input type="text" class="form-input" id="jsonbinBinId" placeholder="e.g. 6642f3be8a4..." autocomplete="off">
       </div>
-
       <div class="flex gap-2 pt-1">
         <button class="btn-accent flex-1 py-2.5 text-[11px]" onclick="saveAndConnect()">
           <i class="fas fa-floppy-disk mr-1.5"></i>Save & Connect
@@ -724,14 +641,12 @@ tailwind.config = {
           <i class="fas fa-rotate mr-1"></i>Sync Now
         </button>
       </div>
-
       <div class="mt-1 flex items-center gap-2 p-2.5 rounded-lg" style="background:rgba(19,24,32,0.8);border:1px solid #1E2530;">
         <div class="sync-dot idle" id="settingsSyncDot"></div>
         <span class="text-[10px] text-muted flex-1" id="settingsSyncStatus">Not configured</span>
         <span class="text-[9px] text-muted font-mono" id="settingsLastSync"></span>
       </div>
     </div>
-
     <div style="border-top:1px solid #1E2530;" class="mt-4 pt-3">
       <p class="text-[9px] text-muted leading-relaxed">
         <i class="fas fa-shield-halved mr-1 text-success"></i>
@@ -740,127 +655,83 @@ tailwind.config = {
     </div>
   </div>
 </div>
-
 <script>
-// ═══════════════════════════════════════════════
-// JSONBIN CONFIG — fill these in OR use the UI
-// ═══════════════════════════════════════════════
 let BIN_ID  = '69ce8e94856a682189f31455';
 let API_KEY = '$2a$10$g76znpXn9nA3ft1eFt2Tmu2u0g7Z0nzl0cmhoWqX25/yKBAzvIL/C';
 const API_URL     = () => `https://api.jsonbin.io/v3/b/${BIN_ID}/latest`;
 const API_PUT_URL = () => `https://api.jsonbin.io/v3/b/${BIN_ID}`;
-
 const STORAGE_KEY = 'ops_desk_v5';
 const CREDS_KEY   = 'ops_desk_creds';
 const todayStr = () => new Date().toISOString().split('T')[0];
-
 let state = {};
 let currentMobileTab = 'tasks';
 let selectedLinkColor = '#E8A838';
 let isSyncing = false;
 let syncTimer = null;
+let editingTaskId = null;
 
-// ═══════════════════════════════════════════════
-// CREDENTIALS — load/save from localStorage
-// ═══════════════════════════════════════════════
 function loadCreds() {
-  try {
-    const c = JSON.parse(localStorage.getItem(CREDS_KEY) || '{}');
-    if (c.binId)  BIN_ID  = c.binId;
-    if (c.apiKey) API_KEY = c.apiKey;
-  } catch(e) {}
+  try { const c = JSON.parse(localStorage.getItem(CREDS_KEY) || '{}'); if (c.binId) BIN_ID = c.binId; if (c.apiKey) API_KEY = c.apiKey; } catch(e) {}
 }
 function saveCreds() {
   try { localStorage.setItem(CREDS_KEY, JSON.stringify({ binId: BIN_ID, apiKey: API_KEY })); } catch(e) {}
 }
 function isConfigured() { return !!(BIN_ID && API_KEY); }
 
-// ═══════════════════════════════════════════════
-// SYNC UI
-// ═══════════════════════════════════════════════
 function updateSyncUI(status, detail) {
   const dot1 = document.getElementById('syncDot');
   const dot2 = document.getElementById('settingsSyncDot');
   const lbl  = document.getElementById('syncLabel');
   const stxt = document.getElementById('settingsSyncStatus');
   const tsEl = document.getElementById('settingsLastSync');
-
   const dotClass = { syncing:'syncing', ok:'ok', error:'error', idle:'idle' }[status] || 'idle';
   [dot1, dot2].forEach(d => { if(d) d.className = 'sync-dot ' + dotClass; });
-
   const labels = { syncing:'Syncing…', ok:'Synced', error:'Error', idle: isConfigured() ? 'Connected' : 'Local' };
   if (lbl)  lbl.textContent  = labels[status] || 'Local';
   if (stxt) stxt.textContent = detail || (isConfigured() ? 'Connected to JSONBin' : 'Enter credentials to enable sync');
   if (tsEl && status === 'ok') tsEl.textContent = 'Last: ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
 }
 
-// ═══════════════════════════════════════════════
-// FETCH WITH RETRY (same as Ledger)
-// ═══════════════════════════════════════════════
 async function fetchWithRetry(url, options, retries = 2) {
   for (let i = 0; i <= retries; i++) {
     try {
       const res = await fetch(url, options);
-      if (res.status === 429) {
-        const wait = 1000 * (i + 1);
-        await new Promise(r => setTimeout(r, wait));
-        continue;
-      }
-      if (!res.ok) {
-        const body = await res.text().catch(() => '');
-        throw new Error(`HTTP ${res.status}: ${body.substring(0, 120)}`);
-      }
+      if (res.status === 429) { await new Promise(r => setTimeout(r, 1000 * (i + 1))); continue; }
+      if (!res.ok) { const body = await res.text().catch(() => ''); throw new Error(`HTTP ${res.status}: ${body.substring(0, 120)}`); }
       return res;
-    } catch(err) {
-      if (i === retries) throw err;
-      await new Promise(r => setTimeout(r, 800));
-    }
+    } catch(err) { if (i === retries) throw err; await new Promise(r => setTimeout(r, 800)); }
   }
 }
 
-// ═══════════════════════════════════════════════
-// FETCH (PULL) FROM JSONBIN
-// ═══════════════════════════════════════════════
 async function fetchState() {
   if (!isConfigured()) return false;
   try {
     updateSyncUI('syncing', 'Pulling from JSONBin…');
-    const res = await fetchWithRetry(API_URL(), {
-      headers: { 'X-Master-Key': API_KEY }
-    });
+    const res = await fetchWithRetry(API_URL(), { headers: { 'X-Master-Key': API_KEY } });
     const json = await res.json();
     const remote = json.record;
     if (remote && typeof remote === 'object' && !Array.isArray(remote)) {
-      state = mergeState(remote);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      updateSyncUI('ok', 'Synced from JSONBin');
-      return true;
+      state = mergeState(remote); localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      updateSyncUI('ok', 'Synced from JSONBin'); return true;
     }
     return false;
   } catch(err) {
     console.error('Fetch error:', err.message);
     updateSyncUI('error', err.message.substring(0, 80));
-    // Fall back to localStorage
-    state = loadLocalState();
-    return false;
+    state = loadLocalState(); return false;
   }
 }
 
-// ═══════════════════════════════════════════════
-// PUSH TO JSONBIN
-// ═══════════════════════════════════════════════
 async function pushState(silent = false) {
   if (!isConfigured() || isSyncing) return;
   isSyncing = true;
   if (!silent) updateSyncUI('syncing', 'Saving…');
   try {
     const res = await fetchWithRetry(API_PUT_URL(), {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json', 'X-Master-Key': API_KEY },
+      method: 'PUT', headers: { 'Content-Type': 'application/json', 'X-Master-Key': API_KEY },
       body: JSON.stringify(state)
     });
-    await res.json();
-    updateSyncUI('ok', 'Saved to JSONBin');
+    await res.json(); updateSyncUI('ok', 'Saved to JSONBin');
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch(err) {
     console.error('Push error:', err.message);
@@ -871,58 +742,34 @@ async function pushState(silent = false) {
   isSyncing = false;
 }
 
-// Debounced auto-push after every change
-function schedulePush() {
-  if (!isConfigured()) return;
-  clearTimeout(syncTimer);
-  syncTimer = setTimeout(() => pushState(false), 1500);
-}
+function schedulePush() { if (!isConfigured()) return; clearTimeout(syncTimer); syncTimer = setTimeout(() => pushState(false), 1500); }
+function saveState() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {} schedulePush(); }
 
-function saveState() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
-  schedulePush();
-}
-
-// Force sync — pull then push (merges missing local entries)
 async function forceSync() {
   if (!isConfigured()) { showToast('Enter credentials first','danger'); return; }
   showToast('Syncing…','info');
   try {
     updateSyncUI('syncing', 'Force syncing…');
     const res = await fetchWithRetry(API_URL(), { headers: { 'X-Master-Key': API_KEY } });
-    const json = await res.json();
-    const remote = json.record;
-    if (remote && typeof remote === 'object' && !Array.isArray(remote)) {
-      state = mergeState(remote);
-    }
-    await pushState(true);
-    reRenderAll();
-    showToast('Sync complete','success');
-    updateSyncUI('ok', 'Force sync complete');
-  } catch(err) {
-    updateSyncUI('error', err.message.substring(0, 80));
-    showToast('Sync failed: ' + err.message.substring(0, 60), 'danger');
-  }
+    const json = await res.json(); const remote = json.record;
+    if (remote && typeof remote === 'object' && !Array.isArray(remote)) { state = mergeState(remote); }
+    await pushState(true); reRenderAll();
+    showToast('Sync complete','success'); updateSyncUI('ok', 'Force sync complete');
+  } catch(err) { updateSyncUI('error', err.message.substring(0, 80)); showToast('Sync failed: ' + err.message.substring(0, 60), 'danger'); }
 }
 
 function mergeState(remote) {
   const def = defaultState();
   return {
-    tasks:          Array.isArray(remote.tasks)  ? remote.tasks  : def.tasks,
-    notes:          Array.isArray(remote.notes)  ? remote.notes  : def.notes,
-    links:          Array.isArray(remote.links)  ? remote.links  : def.links,
+    tasks: Array.isArray(remote.tasks) ? remote.tasks : def.tasks,
+    notes: Array.isArray(remote.notes) ? remote.notes : def.notes,
+    links: Array.isArray(remote.links) ? remote.links : def.links,
     activeCategory: remote.activeCategory || 'all',
-    calMonth:       remote.calMonth  ?? new Date().getMonth(),
-    calYear:        remote.calYear   ?? new Date().getFullYear(),
-    selectedDate:   remote.selectedDate || null,
-    lastDate:       remote.lastDate  || todayStr(),
-    streak:         remote.streak    || 0,
+    calMonth: remote.calMonth ?? new Date().getMonth(), calYear: remote.calYear ?? new Date().getFullYear(),
+    selectedDate: remote.selectedDate || null, lastDate: remote.lastDate || todayStr(), streak: remote.streak || 0,
   };
 }
 
-// ═══════════════════════════════════════════════
-// SETTINGS MODAL
-// ═══════════════════════════════════════════════
 function openSettingsModal() {
   document.getElementById('jsonbinApiKey').value = API_KEY || '';
   document.getElementById('jsonbinBinId').value  = BIN_ID  || '';
@@ -930,60 +777,47 @@ function openSettingsModal() {
   document.getElementById('settingsModal').style.display = 'flex';
 }
 function closeSettingsModal() { document.getElementById('settingsModal').style.display = 'none'; }
-
 function toggleKeyVisibility() {
-  const inp = document.getElementById('jsonbinApiKey');
-  const ico = document.getElementById('keyEyeIcon');
+  const inp = document.getElementById('jsonbinApiKey'); const ico = document.getElementById('keyEyeIcon');
   inp.type = inp.type === 'password' ? 'text' : 'password';
   ico.className = inp.type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
 }
-
 async function saveAndConnect() {
   const key = document.getElementById('jsonbinApiKey').value.trim();
   const bin = document.getElementById('jsonbinBinId').value.trim();
   if (!key || !bin) { showToast('Enter both Master Key and Bin ID', 'danger'); return; }
-  API_KEY = key;
-  BIN_ID  = bin;
-  saveCreds();
+  API_KEY = key; BIN_ID = bin; saveCreds();
   showToast('Connecting to JSONBin…', 'info');
   const ok = await fetchState();
-  if (ok) {
-    reRenderAll();
-    showToast('Connected & synced!', 'success');
-  } else {
-    showToast('Could not pull — check your credentials', 'danger');
-  }
+  if (ok) { reRenderAll(); showToast('Connected & synced!', 'success'); }
+  else { showToast('Could not pull — check your credentials', 'danger'); }
   updateSyncUI(ok ? 'ok' : 'error', ok ? 'Connected to JSONBin' : 'Check credentials');
 }
 
 function reRenderAll() {
-  if (!state.tasks)  state.tasks  = [];
-  if (!state.notes)  state.notes  = [];
-  if (!state.links)  state.links  = [];
-  nextTaskId = (state.tasks.length  ? Math.max(...state.tasks.map(t => t.id))  : 0) + 1;
-  nextNoteId = (state.notes.length  ? Math.max(...state.notes.map(n => n.id))  : 0) + 1;
-  nextLinkId = (state.links.length  ? Math.max(...state.links.map(l => l.id))  : 0) + 1;
+  if (!state.tasks) state.tasks = []; if (!state.notes) state.notes = []; if (!state.links) state.links = [];
+  nextTaskId = (state.tasks.length ? Math.max(...state.tasks.map(t => t.id)) : 0) + 1;
+  nextNoteId = (state.notes.length ? Math.max(...state.notes.map(n => n.id)) : 0) + 1;
+  nextLinkId = (state.links.length ? Math.max(...state.links.map(l => l.id)) : 0) + 1;
   renderTasks(); renderCalendar(); renderNotes(); renderLaunchpad(); updateStats();
 }
 
-// ===== STATE BOOTSTRAP =====
 function defaultLinks() {
   return [
-    { id:1, label:'Gmail',    url:'https://mail.google.com',      group:'comms', icon:'fa-envelope',           color:'#F87171' },
-    { id:2, label:'Calendar', url:'https://calendar.google.com',  group:'comms', icon:'fa-calendar',           color:'#60A5FA' },
-    { id:3, label:'GitHub',   url:'https://github.com',           group:'dev',   icon:'fa-github',             color:'#E8ECF1' },
-    { id:4, label:'Notion',   url:'https://notion.so',            group:'work',  icon:'fa-n',                  color:'#E8ECF1' },
-    { id:5, label:'Figma',    url:'https://figma.com',            group:'dev',   icon:'fa-pen-nib',            color:'#A78BFA' },
-    { id:6, label:'Slack',    url:'https://slack.com',            group:'comms', icon:'fa-hashtag',            color:'#34D399' },
-    { id:7, label:'Linear',   url:'https://linear.app',           group:'work',  icon:'fa-circle-half-stroke', color:'#60A5FA' },
-    { id:8, label:'Drive',    url:'https://drive.google.com',     group:'tools', icon:'fa-hard-drive',         color:'#FBBF24' },
-    { id:9, label:'Vercel',   url:'https://vercel.com',           group:'dev',   icon:'fa-triangle-exclamation',color:'#E8ECF1'},
-    { id:10,label:'ChatGPT',  url:'https://chatgpt.com',          group:'tools', icon:'fa-robot',              color:'#34D399' },
-    { id:11,label:'Spotify',  url:'https://spotify.com',          group:'other', icon:'fa-music',              color:'#34D399' },
-    { id:12,label:'YouTube',  url:'https://youtube.com',          group:'other', icon:'fa-youtube',            color:'#F87171' },
+    { id:1, label:'Gmail', url:'https://mail.google.com', group:'comms', icon:'fa-envelope', color:'#F87171' },
+    { id:2, label:'Calendar', url:'https://calendar.google.com', group:'comms', icon:'fa-calendar', color:'#60A5FA' },
+    { id:3, label:'GitHub', url:'https://github.com', group:'dev', icon:'fa-github', color:'#E8ECF1' },
+    { id:4, label:'Notion', url:'https://notion.so', group:'work', icon:'fa-n', color:'#E8ECF1' },
+    { id:5, label:'Figma', url:'https://figma.com', group:'dev', icon:'fa-pen-nib', color:'#A78BFA' },
+    { id:6, label:'Slack', url:'https://slack.com', group:'comms', icon:'fa-hashtag', color:'#34D399' },
+    { id:7, label:'Linear', url:'https://linear.app', group:'work', icon:'fa-circle-half-stroke', color:'#60A5FA' },
+    { id:8, label:'Drive', url:'https://drive.google.com', group:'tools', icon:'fa-hard-drive', color:'#FBBF24' },
+    { id:9, label:'Vercel', url:'https://vercel.com', group:'dev', icon:'fa-triangle-exclamation', color:'#E8ECF1' },
+    { id:10, label:'ChatGPT', url:'https://chatgpt.com', group:'tools', icon:'fa-robot', color:'#34D399' },
+    { id:11, label:'Spotify', url:'https://spotify.com', group:'other', icon:'fa-music', color:'#34D399' },
+    { id:12, label:'YouTube', url:'https://youtube.com', group:'other', icon:'fa-youtube', color:'#F87171' },
   ];
 }
-
 function defaultState() {
   const t = todayStr();
   const d = (offset) => { const x = new Date(); x.setDate(x.getDate() + offset); return x.toISOString().split('T')[0]; };
@@ -998,7 +832,7 @@ function defaultState() {
       { id:7, text:'Submit expense report to finance', priority:'high', category:'work', done:false, created:Date.now()-25200000, date:d(1) },
       { id:8, text:'Call insurance about claim', priority:'medium', category:'personal', done:false, created:Date.now()-28800000, date:d(-1) },
       { id:9, text:'Update portfolio with new projects', priority:'low', category:'work', done:false, created:Date.now()-32400000, date:t },
-      { id:10,text:'Meal prep for next three days', priority:'medium', category:'health', done:false, created:Date.now()-36000000, date:d(1) },
+      { id:10, text:'Meal prep for next three days', priority:'medium', category:'health', done:false, created:Date.now()-36000000, date:d(1) },
     ],
     notes: [
       { id:1, title:'Meeting Notes', content:'Discussed new roadmap priorities. Need follow-up on API redesign by Friday. Team agreed on two-week sprint cycle.', tag:'work', created:Date.now()-86400000 },
@@ -1012,48 +846,32 @@ function defaultState() {
     selectedDate:null, lastDate:t, streak:0,
   };
 }
-
 function loadLocalState() {
   try {
     const s = localStorage.getItem(STORAGE_KEY);
-    if (s) {
-      const p = JSON.parse(s);
-      if (p.calMonth == null) { p.calMonth = new Date().getMonth(); p.calYear = new Date().getFullYear(); }
-      if (!p.links) p.links = defaultLinks();
-      return p;
-    }
+    if (s) { const p = JSON.parse(s); if (p.calMonth == null) { p.calMonth = new Date().getMonth(); p.calYear = new Date().getFullYear(); } if (!p.links) p.links = defaultLinks(); return p; }
   } catch(e) {}
   return defaultState();
 }
 
-// ===== MOBILE TAB SWITCHING =====
 function switchMobileTab(tab) {
   currentMobileTab = tab;
   document.querySelectorAll('.mob-tab').forEach(el => el.classList.toggle('active', el.dataset.panel === tab));
   document.querySelectorAll('.dash-grid .widget').forEach(el => el.classList.remove('mob-active'));
   const panel = document.getElementById(`panel-${tab}`);
-  if (panel) {
-    panel.style.animation = 'none'; panel.offsetHeight; panel.style.animation = '';
-    panel.classList.add('mob-active');
-  }
+  if (panel) { panel.style.animation = 'none'; panel.offsetHeight; panel.style.animation = ''; panel.classList.add('mob-active'); }
 }
 
-// ===== TOAST =====
 function showToast(msg, type='info') {
-  const c = document.getElementById('toastContainer');
-  const t = document.createElement('div');
+  const c = document.getElementById('toastContainer'); const t = document.createElement('div');
   const icons = { success:'fa-check-circle', info:'fa-info-circle', danger:'fa-exclamation-circle' };
-  t.className = `toast toast-${type}`;
-  t.innerHTML = `<i class="fas ${icons[type]||icons.info} mr-1.5"></i>${msg}`;
-  c.appendChild(t);
-  setTimeout(() => t.remove(), 2900);
+  t.className = `toast toast-${type}`; t.innerHTML = `<i class="fas ${icons[type]||icons.info} mr-1.5"></i>${msg}`;
+  c.appendChild(t); setTimeout(() => t.remove(), 2900);
 }
 
-// ===== CLOCK =====
 function updateClock() {
   const now = new Date();
-  document.getElementById('headerClock').textContent =
-    `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+  document.getElementById('headerClock').textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
   document.getElementById('headerDate').textContent = now.toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'});
   document.getElementById('statsDate').textContent = now.toLocaleDateString('en-US',{month:'short',day:'numeric'});
   const h = now.getHours();
@@ -1063,7 +881,6 @@ setInterval(updateClock, 1000); updateClock();
 
 // ===== TASKS =====
 let nextTaskId = 1;
-
 function getFilteredTasks() {
   let tasks = [...state.tasks];
   if (state.activeCategory !== 'all') tasks = tasks.filter(t => t.category === state.activeCategory);
@@ -1074,7 +891,6 @@ function getFilteredTasks() {
   else tasks.sort((a,b)=>a.text.localeCompare(b.text));
   return tasks;
 }
-
 function renderCategoryTabs() {
   const cats=['all','work','personal','health','learning'];
   const labels={all:'All',work:'Work',personal:'Personal',health:'Health',learning:'Learning'};
@@ -1085,12 +901,9 @@ function renderCategoryTabs() {
       <i class="fas ${icons[c]} mr-0.5" style="font-size:8px;"></i>${labels[c]} <span class="opacity-50">${counts[c]}</span>
     </div>`).join('');
 }
-
 function setCategory(cat) { state.activeCategory=cat; renderTasks(); }
-
 function renderPendingBanner() {
-  const pending = state.tasks.filter(t=>!t.done);
-  const high = pending.filter(t=>t.priority==='high');
+  const pending = state.tasks.filter(t=>!t.done); const high = pending.filter(t=>t.priority==='high');
   const banner = document.getElementById('pendingBanner');
   if (!pending.length) { banner.innerHTML=''; return; }
   const hl = high.length>0 ? high.slice(0,2).map(t=>
@@ -1107,10 +920,8 @@ function renderPendingBanner() {
     </div>
   </div>`;
 }
-
 function renderTasks() {
-  const tasks = getFilteredTasks();
-  const done = tasks.filter(t=>t.done).length;
+  const tasks = getFilteredTasks(); const done = tasks.filter(t=>t.done).length;
   document.getElementById('taskCount').textContent = `${done}/${tasks.length}`;
   renderPendingBanner();
   if (!tasks.length) {
@@ -1126,7 +937,6 @@ function renderTasks() {
   document.getElementById('taskList').innerHTML = html;
   renderCategoryTabs(); updateStats();
 }
-
 function taskHTML(t) {
   const dl = t.date===todayStr()?'Today':t.date===getYesterday()?'Yesterday':fmtDate(t.date);
   return `<div class="task-item" id="task-${t.id}">
@@ -1139,10 +949,12 @@ function taskHTML(t) {
         <span class="text-[7px] text-muted">${dl}</span>
       </div>
     </div>
-    <button class="text-muted hover:text-danger transition text-[10px] p-1 flex-shrink-0" onclick="deleteTask(${t.id})"><i class="fas fa-trash-can"></i></button>
+    <div class="task-actions">
+      <button class="task-action-btn edit-btn" onclick="editTask(${t.id})" title="Edit task"><i class="fas fa-pen"></i></button>
+      <button class="task-action-btn del-btn" onclick="deleteTask(${t.id})" title="Delete task"><i class="fas fa-trash-can"></i></button>
+    </div>
   </div>`;
 }
-
 function toggleTask(id) {
   const task = state.tasks.find(t=>t.id===id); if(!task) return;
   if (!task.done) {
@@ -1153,19 +965,56 @@ function toggleTask(id) {
 }
 function deleteTask(id) { state.tasks=state.tasks.filter(t=>t.id!==id); saveState(); renderTasks(); renderCalendar(); showToast('Task removed','danger'); }
 
-function addTask() {
-  const name = document.getElementById('newTaskName').value.trim();
-  if (!name) { showToast('Enter a task name','danger'); return; }
-  state.tasks.unshift({ id:nextTaskId++, text:name, priority:document.getElementById('newTaskPriority').value,
-    category:document.getElementById('newTaskCategory').value, done:false, created:Date.now(),
-    date:document.getElementById('newTaskDate').value||todayStr() });
-  saveState(); renderTasks(); renderCalendar(); closeAddTaskModal();
-  document.getElementById('newTaskName').value=''; document.getElementById('newTaskDate').value=todayStr();
-  showToast('Task added','success');
+// ═══════════════════════════════════════════════
+// TASK MODAL — Add + Edit
+// ═══════════════════════════════════════════════
+function openAddTaskModal(prefillDate) {
+  editingTaskId = null;
+  document.getElementById('taskModalTitle').textContent = 'New Task';
+  document.getElementById('taskModalBtn').textContent = 'Add Task';
+  document.getElementById('newTaskName').value = '';
+  document.getElementById('newTaskPriority').value = 'medium';
+  document.getElementById('newTaskCategory').value = 'work';
+  document.getElementById('newTaskDate').value = prefillDate || todayStr();
+  document.getElementById('addTaskModal').style.display = 'flex';
+  setTimeout(() => document.getElementById('newTaskName').focus(), 100);
 }
-
-function openAddTaskModal() { document.getElementById('addTaskModal').style.display='flex'; setTimeout(()=>document.getElementById('newTaskName').focus(),100); }
-function closeAddTaskModal() { document.getElementById('addTaskModal').style.display='none'; }
+function editTask(id) {
+  const task = state.tasks.find(t => t.id === id);
+  if (!task) return;
+  editingTaskId = id;
+  document.getElementById('taskModalTitle').textContent = 'Edit Task';
+  document.getElementById('taskModalBtn').textContent = 'Save Changes';
+  document.getElementById('newTaskName').value = task.text;
+  document.getElementById('newTaskPriority').value = task.priority;
+  document.getElementById('newTaskCategory').value = task.category;
+  document.getElementById('newTaskDate').value = task.date || todayStr();
+  document.getElementById('addTaskModal').style.display = 'flex';
+  setTimeout(() => document.getElementById('newTaskName').focus(), 100);
+}
+function closeAddTaskModal() {
+  document.getElementById('addTaskModal').style.display = 'none';
+  editingTaskId = null;
+}
+function saveTask() {
+  const name = document.getElementById('newTaskName').value.trim();
+  if (!name) { showToast('Enter a task name', 'danger'); return; }
+  const priority = document.getElementById('newTaskPriority').value;
+  const category = document.getElementById('newTaskCategory').value;
+  const date = document.getElementById('newTaskDate').value || todayStr();
+  if (editingTaskId !== null) {
+    const task = state.tasks.find(t => t.id === editingTaskId);
+    if (task) {
+      task.text = name; task.priority = priority; task.category = category; task.date = date;
+      saveState(); renderTasks(); renderCalendar(); closeAddTaskModal();
+      showToast('Task updated', 'success');
+    }
+  } else {
+    state.tasks.unshift({ id: nextTaskId++, text: name, priority, category, done: false, created: Date.now(), date });
+    saveState(); renderTasks(); renderCalendar(); closeAddTaskModal();
+    showToast('Task added', 'success');
+  }
+}
 
 document.getElementById('quickCapture').addEventListener('keydown', function(e) {
   if (e.key==='Enter') {
@@ -1178,14 +1027,12 @@ document.getElementById('quickCapture').addEventListener('keydown', function(e) 
 // ===== CALENDAR =====
 const dayNames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const monthNames=['January','February','March','April','May','June','July','August','September','October','November','December'];
-
 function changeMonth(d) {
   state.calMonth+=d;
   if(state.calMonth>11){state.calMonth=0;state.calYear++;}
   if(state.calMonth<0){state.calMonth=11;state.calYear--;}
   state.selectedDate=null; saveState(); renderCalendar();
 }
-
 function renderCalendar() {
   document.getElementById('calHeaders').innerHTML = dayNames.map(d=>`<div class="cal-day-header">${d}</div>`).join('');
   document.getElementById('calMonthLabel').textContent = `${monthNames[state.calMonth].slice(0,3)} ${state.calYear}`;
@@ -1215,9 +1062,7 @@ function renderCalendar() {
   }).join('');
   renderDayDetail();
 }
-
 function selectDate(ds) { state.selectedDate=state.selectedDate===ds?null:ds; saveState(); renderCalendar(); }
-
 function renderDayDetail() {
   const panel=document.getElementById('dayDetail');
   if(!state.selectedDate){panel.style.display='none';return;}
@@ -1234,10 +1079,8 @@ function renderDayDetail() {
   if(done.length) html+=done.map(t=>`<div class="day-task-item"><div class="day-task-dot" style="background:#34D399;"></div><span class="flex-1 truncate day-task-done">${esc(t.text)}</span><span class="text-[7px] text-success uppercase">Done</span></div>`).join('');
   panel.style.display='block'; panel.innerHTML=html;
 }
+function openAddTaskForDate(ds) { openAddTaskModal(ds); }
 
-function openAddTaskForDate(ds) { openAddTaskModal(); document.getElementById('newTaskDate').value=ds; }
-
-// ===== STATS =====
 function updateStats() {
   const tt=state.tasks.filter(t=>t.date===todayStr()), total=tt.length, comp=tt.filter(t=>t.done).length;
   const rate=total>0?Math.round(comp/total*100):0;
@@ -1254,7 +1097,6 @@ function updateStats() {
 
 // ===== NOTES =====
 let editingNoteId=null, nextNoteId=1;
-
 function renderNotes() {
   const notes=[...state.notes].sort((a,b)=>b.created-a.created);
   if(!notes.length){document.getElementById('notesList').innerHTML=`<div class="text-center py-8 text-muted"><i class="fas fa-note-sticky text-lg mb-1.5 opacity-25"></i><p class="text-[11px]">No notes yet</p></div>`;return;}
@@ -1271,7 +1113,6 @@ function renderNotes() {
       </div>
     </div>`).join('');
 }
-
 function openNoteModal(id=null) {
   editingNoteId=id;
   if(id){const n=state.notes.find(x=>x.id===id);document.getElementById('noteModalTitle').textContent='Edit Note';document.getElementById('noteTitle').value=n.title;document.getElementById('noteContent').value=n.content;document.getElementById('noteTag').value=n.tag;}
@@ -1291,18 +1132,14 @@ function deleteNote(id){state.notes=state.notes.filter(n=>n.id!==id);saveState()
 
 // ===== QUICK LINKS =====
 let nextLinkId = 1;
-
-// Auto-detect icon from URL/label
 function guessIcon(label, url) {
   const map = {
     gmail:'fa-envelope', mail:'fa-envelope', outlook:'fa-envelope',
-    github:'fa-github', gitlab:'fa-gitlab',
-    notion:'fa-n', figma:'fa-pen-nib',
+    github:'fa-github', gitlab:'fa-gitlab', notion:'fa-n', figma:'fa-pen-nib',
     slack:'fa-hashtag', discord:'fa-discord', teams:'fa-microsoft',
-    drive:'fa-hard-drive', dropbox:'fa-dropbox',
-    calendar:'fa-calendar', meet:'fa-video', zoom:'fa-video',
-    linear:'fa-circle-half-stroke', jira:'fa-jira', asana:'fa-a',
-    vercel:'fa-triangle-exclamation', netlify:'fa-n',
+    drive:'fa-hard-drive', dropbox:'fa-dropbox', calendar:'fa-calendar',
+    meet:'fa-video', zoom:'fa-video', linear:'fa-circle-half-stroke',
+    jira:'fa-jira', asana:'fa-a', vercel:'fa-triangle-exclamation', netlify:'fa-n',
     spotify:'fa-music', youtube:'fa-youtube', netflix:'fa-film',
     twitter:'fa-twitter', x:'fa-x-twitter', linkedin:'fa-linkedin',
     instagram:'fa-instagram', reddit:'fa-reddit',
@@ -1316,25 +1153,13 @@ function guessIcon(label, url) {
   for (const [k,v] of Object.entries(map)) { if (combined.includes(k)) return v; }
   return 'fa-link';
 }
-
-// Get favicon URL
-function faviconUrl(url) {
-  try {
-    const domain = new URL(url).hostname;
-    return `https://www.google.com/s2/favicons?sz=32&domain=${domain}`;
-  } catch { return null; }
-}
-
+function faviconUrl(url) { try { return `https://www.google.com/s2/favicons?sz=32&domain=${new URL(url).hostname}`; } catch { return null; } }
 function renderLaunchpad() {
   const links = state.links;
   const groups = ['work','dev','comms','tools','other'];
   const groupLabels = { work:'Work', dev:'Dev', comms:'Comms', tools:'Tools', other:'Other' };
   const groupIcons = { work:'fa-briefcase', dev:'fa-code', comms:'fa-comments', tools:'fa-screwdriver-wrench', other:'fa-star' };
-
-  // Group links
-  const grouped = {};
-  groups.forEach(g => { grouped[g] = links.filter(l=>l.group===g); });
-
+  const grouped = {}; groups.forEach(g => { grouped[g] = links.filter(l=>l.group===g); });
   let html = '';
   groups.forEach(g => {
     if (!grouped[g].length) return;
@@ -1343,59 +1168,34 @@ function renderLaunchpad() {
     grouped[g].forEach(link => {
       const icon = link.icon || guessIcon(link.label, link.url);
       const color = link.color || '#E8A838';
-      const bgAlpha = hexToRgba(color, 0.08);
-      const hoverBg = hexToRgba(color, 0.12);
-      html += `
-        <a class="link-tile" href="${esc(link.url)}" target="_blank" rel="noopener" title="${esc(link.label)}"
-           style="--tile-color:${color};"
+      const bgAlpha = hexToRgba(color, 0.08); const hoverBg = hexToRgba(color, 0.12);
+      html += `<a class="link-tile" href="${esc(link.url)}" target="_blank" rel="noopener" title="${esc(link.label)}"
            onmouseover="this.style.borderColor='${color}40';this.style.background='${hoverBg}'"
-           onmouseout="this.style.borderColor='#242D3B';this.style.background='rgba(19,24,32,0.6)'"
-        >
-          <div class="tile-del" onclick="event.preventDefault();event.stopPropagation();deleteLink(${link.id})">
-            <i class="fas fa-xmark"></i>
-          </div>
-          <div class="link-icon" style="background:${bgAlpha};color:${color};">
-            <i class="fab ${icon} fa-${icon.replace('fa-','')} fas ${icon}"></i>
-          </div>
-          <span class="link-label">${esc(link.label)}</span>
-        </a>`;
+           onmouseout="this.style.borderColor='#242D3B';this.style.background='rgba(19,24,32,0.6)'">
+          <div class="tile-del" onclick="event.preventDefault();event.stopPropagation();deleteLink(${link.id})"><i class="fas fa-xmark"></i></div>
+          <div class="link-icon" style="background:${bgAlpha};color:${color};"><i class="fab ${icon} fa-${icon.replace('fa-','')} fas ${icon}"></i></div>
+          <span class="link-label">${esc(link.label)}</span></a>`;
     });
     html += `</div>`;
   });
-
-  // Add tile
-  html += `<div class="link-tile-add" onclick="openLinkModal()">
-    <i class="fas fa-plus"></i>
-    <span>Add link</span>
-  </div>`;
-
+  html += `<div class="link-tile-add" onclick="openLinkModal()"><i class="fas fa-plus"></i><span>Add link</span></div>`;
   document.getElementById('launchpadBody').innerHTML = html;
 }
-
 function hexToRgba(hex, alpha) {
-  try {
-    let h = hex.replace('#','');
-    if (h.length===3) h=h.split('').map(c=>c+c).join('');
-    const r=parseInt(h.substr(0,2),16), g=parseInt(h.substr(2,2),16), b=parseInt(h.substr(4,2),16);
-    return `rgba(${r},${g},${b},${alpha})`;
+  try { let h = hex.replace('#',''); if (h.length===3) h=h.split('').map(c=>c+c).join('');
+    return `rgba(${parseInt(h.substr(0,2),16)},${parseInt(h.substr(2,2),16)},${parseInt(h.substr(4,2),16)},${alpha})`;
   } catch { return `rgba(232,168,56,${alpha})`; }
 }
-
 function selectColor(el, color) {
   selectedLinkColor = color;
   document.querySelectorAll('#linkColorPicker .color-swatch').forEach(s => {
-    s.style.borderColor = s===el ? '#E8ECF1' : 'transparent';
-    s.style.transform = s===el ? 'scale(1.2)' : 'scale(1)';
+    s.style.borderColor = s===el ? '#E8ECF1' : 'transparent'; s.style.transform = s===el ? 'scale(1.2)' : 'scale(1)';
   });
 }
-
 function openLinkModal() {
-  document.getElementById('linkLabel').value='';
-  document.getElementById('linkUrl').value='';
-  document.getElementById('linkIcon').value='';
-  document.getElementById('linkGroup').value='work';
+  document.getElementById('linkLabel').value=''; document.getElementById('linkUrl').value='';
+  document.getElementById('linkIcon').value=''; document.getElementById('linkGroup').value='work';
   selectedLinkColor='#E8A838';
-  // Reset swatches
   document.querySelectorAll('#linkColorPicker .color-swatch').forEach(s => {
     s.style.borderColor = s.dataset.color==='#E8A838' ? '#E8ECF1' : 'transparent';
     s.style.transform = s.dataset.color==='#E8A838' ? 'scale(1.2)' : 'scale(1)';
@@ -1404,30 +1204,18 @@ function openLinkModal() {
   setTimeout(()=>document.getElementById('linkLabel').focus(),100);
 }
 function closeLinkModal() { document.getElementById('linkModal').style.display='none'; }
-
 function saveLink() {
   const label = document.getElementById('linkLabel').value.trim();
   const url = document.getElementById('linkUrl').value.trim();
   if (!label) { showToast('Enter a label','danger'); return; }
   if (!url) { showToast('Enter a URL','danger'); return; }
-  let finalUrl = url;
-  if (!/^https?:\/\//i.test(finalUrl)) finalUrl = 'https://' + finalUrl;
+  let finalUrl = url; if (!/^https?:\/\//i.test(finalUrl)) finalUrl = 'https://' + finalUrl;
   const iconInput = document.getElementById('linkIcon').value.trim();
-  const icon = iconInput || guessIcon(label, finalUrl);
-  state.links.push({
-    id: nextLinkId++, label, url: finalUrl,
-    group: document.getElementById('linkGroup').value,
-    icon, color: selectedLinkColor,
-  });
-  saveState(); renderLaunchpad(); closeLinkModal();
-  showToast('Link added','success');
+  state.links.push({ id: nextLinkId++, label, url: finalUrl, group: document.getElementById('linkGroup').value,
+    icon: iconInput || guessIcon(label, finalUrl), color: selectedLinkColor });
+  saveState(); renderLaunchpad(); closeLinkModal(); showToast('Link added','success');
 }
-
-function deleteLink(id) {
-  state.links = state.links.filter(l=>l.id!==id);
-  saveState(); renderLaunchpad();
-  showToast('Link removed','danger');
-}
+function deleteLink(id) { state.links = state.links.filter(l=>l.id!==id); saveState(); renderLaunchpad(); showToast('Link removed','danger'); }
 
 // ===== UTILS =====
 function esc(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
@@ -1435,28 +1223,18 @@ function timeAgo(ts){const m=Math.floor((Date.now()-ts)/60000);if(m<1)return'now
 function fmtDate(ds){try{return new Date(ds+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});}catch(e){return ds;}}
 function getYesterday(){const d=new Date();d.setDate(d.getDate()-1);return d.toISOString().split('T')[0];}
 
-// ===== KEYBOARD =====
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){closeAddTaskModal();closeNoteModal();closeLinkModal();closeSettingsModal();}
   if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();document.getElementById('quickCapture').focus();}
 });
 
-// ===== INIT =====
 async function init() {
-  loadCreds();
-  state = loadLocalState();
+  loadCreds(); state = loadLocalState();
   document.getElementById('newTaskDate').value = todayStr();
-
-  if (isConfigured()) {
-    await fetchState();   // pulls from JSONBin, updates state
-  } else {
-    updateSyncUI('idle', 'Enter credentials in ⚙ Settings to enable sync');
-  }
-
-  // Hide loading overlay
+  if (isConfigured()) { await fetchState(); }
+  else { updateSyncUI('idle', 'Enter credentials in ⚙ Settings to enable sync'); }
   const overlay = document.getElementById('loadingOverlay');
   if (overlay) { overlay.style.opacity = '0'; setTimeout(() => overlay.style.display = 'none', 300); }
-
   reRenderAll();
 }
 init();
